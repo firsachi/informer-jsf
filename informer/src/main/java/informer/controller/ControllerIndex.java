@@ -53,8 +53,11 @@ public class ControllerIndex implements Serializable{
 	public void init() {
 		this.companies = serviceCompany.findEnable();
 		this.departments = serviceDepartment.fillDepartmentCompany();
-		this.selectedDepartment = departments.get(0);
-		this.employees = serviceEmployee.findDepartmentCompanyDisable(departments.get(0).getDepartmentId(), companies.get(0).getCompanyId(), false);
+		if (0 != departments.size()) {
+			this.selectedDepartment = departments.get(0);
+			this.employees = serviceEmployee.findDepartmentCompanyDisable(departments.get(0).getDepartmentId(), companies.get(0).getCompanyId(), false);
+		}
+		
 	}
 
 	public void actionclickDepartment(ActionEvent event) {
