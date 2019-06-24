@@ -8,8 +8,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
 import javax.faces.event.ActionEvent;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 import informer.model.ModelCompany;
@@ -24,7 +24,7 @@ import informer.service.ServiceEmployee;
  *
  */
 @Named
-@SessionScoped
+@ViewScoped
 public class ControllerIndex implements Serializable{
 
 	/**
