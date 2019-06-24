@@ -2,4 +2,5 @@
 <!DOCTYPE jboss-web>
 <jboss-web>
 	<context-root>/informer</context-root>
+	
 </jboss-web>
