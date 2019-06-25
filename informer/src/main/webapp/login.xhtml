@@ -17,14 +17,9 @@
 <h:body>
 	
 	<div class="row align-center">
-		<form action="j_security_check" method="post">
-    Input for username:<br></br>
-    <input name="j_username" type="text"></input><br></br>
-    Input for password:<br></br>
-    <input name="j_password" type="password"></input><br></br>
-    <input type="submit" value="Авторизироваться"></input>
-</form>
-		
+		<form action="j_security_check" method="post" class="columns large-4 callout">
+			<ui:include src="/WEB-INF/templates/template-login.xhtml"/>
+		</form>
 	</div>
 	
 	<h:outputScript library="js" name="vendor/jquery.js" />

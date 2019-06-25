@@ -15,6 +15,13 @@
 </h:head>
 
 <h:body>
+
+	<div class="row align-center">
+		<form action="j_security_check" method="post" class="columns large-4 callout">
+			<h:outputText value="Error login if password"/>
+			<ui:include src="/WEB-INF/templates/template-login.xhtml"/>
+		</form>
+	</div>
 	
 	<h:outputScript library="js" name="vendor/jquery.js" />
 	<h:outputScript library="js" name="vendor/what-input.js" />
