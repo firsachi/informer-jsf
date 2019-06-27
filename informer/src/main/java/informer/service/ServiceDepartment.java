@@ -34,7 +34,7 @@ public class ServiceDepartment {
 	
 	
 	public ModelDepartment fingId(Integer primaryKey) {
-		return convertorDepartment.entityToModel(repositoryDepartment.byId(primaryKey));
+		return convertorDepartment.entityToModel(repositoryDepartment.find(primaryKey));
 	}
 
 }
