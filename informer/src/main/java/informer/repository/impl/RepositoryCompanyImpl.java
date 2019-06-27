@@ -10,6 +10,10 @@ import informer.repository.RepositoryCompany;
 
 @Stateless
 public class RepositoryCompanyImpl extends RepositoryBaseImpl<Company> implements RepositoryCompany{
+	
+	public RepositoryCompanyImpl() {
+		super(Company.class);
+	}
 
 	@Override
 	public List<Company> fillDisabled(boolean disabale) {

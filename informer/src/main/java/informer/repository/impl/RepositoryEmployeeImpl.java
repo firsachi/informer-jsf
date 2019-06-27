@@ -17,6 +17,10 @@ import informer.repository.RepositoryEmployee;
  */
 @Stateless
 public class RepositoryEmployeeImpl extends RepositoryBaseImpl<Employee> implements RepositoryEmployee {
+	
+	public RepositoryEmployeeImpl() {
+		super(Employee.class);
+	}
 
 	@Override
 	public List<Employee> findDepartmentCompanyDisable(int departmentId, int companyId, boolean disable) {

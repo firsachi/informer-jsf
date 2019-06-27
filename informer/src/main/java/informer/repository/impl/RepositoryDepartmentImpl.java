@@ -18,16 +18,14 @@ import informer.repository.RepositoryDepartment;
 @Stateless
 public class RepositoryDepartmentImpl extends RepositoryBaseImpl<Department> implements RepositoryDepartment {
 
-	//TODO
+	public RepositoryDepartmentImpl() {
+		super(Department.class);
+	}
+	
 	@Override
 	public List<Department> findNameCompany(String nameCompany) {
 		TypedQuery<Department> typedQuery = entityManager.createNamedQuery("Department.all", Department.class);
 		return typedQuery.getResultList();
-	}
-
-	@Override
-	public Department byId(int primaryKey) {
-		return entityManager.find(Department.class, primaryKey);
 	}
 
 }
