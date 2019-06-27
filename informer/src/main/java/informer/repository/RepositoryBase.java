@@ -14,5 +14,7 @@ public interface RepositoryBase<E> {
 	public void update(E entity);
 	
 	public void delete(int primaryKey);
+	
+	E find(Integer primaryKey);
 
 }
