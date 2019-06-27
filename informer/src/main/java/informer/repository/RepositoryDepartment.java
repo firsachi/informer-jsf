@@ -15,5 +15,4 @@ public interface RepositoryDepartment extends RepositoryBase<Department> {
 	
 	List<Department> findNameCompany(String nameCompany);
 	
-	Department byId(int primaryKey);
 }
