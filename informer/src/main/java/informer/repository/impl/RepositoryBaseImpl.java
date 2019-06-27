@@ -17,7 +17,12 @@ public abstract class RepositoryBaseImpl<E> implements RepositoryBase<E> {
 	@PersistenceContext(unitName = "informerDS")
 	protected EntityManager entityManager;
 
-	private Class<E> entityClass;
+	private final Class<E> entityClass;
+	
+	public RepositoryBaseImpl(Class<E> entityClass) {
+		super();
+		this.entityClass = entityClass;
+	}
 
 	public E create(E entity) {
 		entityManager.persist(entity);
@@ -30,6 +35,10 @@ public abstract class RepositoryBaseImpl<E> implements RepositoryBase<E> {
 
 	public void delete(int primaryKey) {
 		entityManager.remove(entityManager.find(entityClass, primaryKey));
+	}
+	
+	public E find(Integer primaryKey) {
+		return entityManager.find(entityClass, primaryKey);
 	}
 
 }
