@@ -54,4 +54,9 @@ public class ModelRoom {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "ModelRoom [roomId=" + roomId + ", numberRoom=" + numberRoom + "]";
+	}
+	
 }
