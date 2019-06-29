@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "room")
-@NamedQueries({ @NamedQuery(name = "allRooms", query = "SELECT R FROM Room R ORDER BY R.id") })
+@NamedQueries({ @NamedQuery(name = "Room.all", query = "SELECT R FROM Room R ORDER BY R.numberRoom") })
 public class Room implements Serializable {
 
 	/**
