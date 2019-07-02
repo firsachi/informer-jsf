@@ -38,7 +38,7 @@ public class ValidatorNumberRoom implements Validator<Integer> {
 			
 			try {
 				if (null != repository.findNumberRoom(value)) {
-					messageError(resourceBundle.getString("errror.notnull"));
+					messageError(resourceBundle.getString("errror.uniqueNumberRoom"));
 				}
 			}catch (NoResultException ex)
 			{}			
