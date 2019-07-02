@@ -18,12 +18,19 @@
 			<ui:define name="content">
     			<div class="row">
     				<div class="columns">
-    					<h:dataTable id="tableRoom" value="#{controllerRoom.rooms}" var="room">
+    					<h:form id="formTableRooms">
+    						<h:dataTable id="tableRoom" value="#{controllerRoom.rooms}" var="room">
     						<h:column>
     							<f:facet name="header">Номер кімнати</f:facet>
     							<h:outputText value="#{room.numberRoom}"/>
     						</h:column>
     						<h:column>
+    							<f:facet name="header">
+    								<h:commandLink id="add" styleClass="button" value="#{msg['buttons.add']}">
+    									<f:ajax execute="formAdd" render="@form :formNewRoom"/>
+    									<f:passThroughAttribute name="data-open" value="newRoom"/>
+    								</h:commandLink>
+    							</f:facet>
     							<div style="margin-bottom: 0;" class="small align-right button-group">
     								<h:commandLink id="edit" styleClass="hollow button" 
     											   value="#{msg['buttons.edit']}" 
@@ -37,6 +44,7 @@
     							</div>
     						</h:column>
     					</h:dataTable>
+    					</h:form>
     				</div>
     			</div>
     			
@@ -50,7 +58,8 @@
     					
     					<div style="margin-bottom: 0;" class="small align-right button-group">
 							<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}"/>
-							<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}">
+							<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.addRoom}">
+								<f:ajax execute="@form" render="@form :formNewRoom"/>
 							</h:commandLink>
 						</div>
     				</h:form>
@@ -66,10 +75,10 @@
 							
 							<div style="margin-bottom: 0;" class="small align-right button-group">
 								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}"/>
-								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}">
+								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.updateRoom}">
+									<f:ajax execute="@form" render="@form :formEdit"/>
 								</h:commandLink>
 							</div>
-							
 						</h:form>
 				</div>
     		</ui:define>

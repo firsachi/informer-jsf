@@ -5,6 +5,10 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
     		<h:outputLabel for="numberRoom" value="#{msg['room.numberRoom']}">
-				<h:inputText id="numberRoom" value="#{controllerRoom.selectedRoom.numberRoom}"/>
+				<h:inputText id="numberRoom" value="#{controllerRoom.selectedRoom.numberRoom}">
+					<f:validateLength maximum="3" minimum="3"/>
+					<f:validateBean binding="#{validatorNumberRoom}"/>
+				</h:inputText>
+				<h:messages for="numberRoom" style="color:red"/>
 			</h:outputLabel>
 </ui:composition>
