@@ -26,10 +26,15 @@
     						</h:column>
     						<h:column>
     							<f:facet name="header">
-    								<h:commandLink id="add" styleClass="button" value="#{msg['buttons.add']}">
-    									<f:ajax execute="formAdd" render="@form :formNewRoom"/>
-    									<f:passThroughAttribute name="data-open" value="newRoom"/>
-    								</h:commandLink>
+    							<div style="text-align: right;">
+
+    										<h:commandLink id="add" style="margin-bottom: 0px;" styleClass="button" value="#{msg['buttons.add']}">
+    											<f:ajax execute="formAdd" render="@form :formNewRoom"/>
+    											<f:passThroughAttribute name="data-open" value="newRoom"/>
+    										</h:commandLink>
+
+    								
+    							</div>
     							</f:facet>
     							<div style="margin-bottom: 0;" class="small align-right button-group">
     								<h:commandLink id="edit" styleClass="hollow button" 
@@ -57,9 +62,11 @@
     					<ui:include src="/WEB-INF/templates/template-room.xhtml"/>
     					
     					<div style="margin-bottom: 0;" class="small align-right button-group">
-							<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}"/>
+							<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}">
+								<f:ajax execute="@form" render="@form"/>
+							</h:commandLink>
 							<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.addRoom}">
-								<f:ajax execute="@form" render="@form :formNewRoom"/>
+								<f:ajax execute="@form" render="@form"/>
 							</h:commandLink>
 						</div>
     				</h:form>
@@ -76,7 +83,7 @@
 							<div style="margin-bottom: 0;" class="small align-right button-group">
 								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}"/>
 								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.updateRoom}">
-									<f:ajax execute="@form" render="@form :formEdit"/>
+									<f:ajax execute="@form" render="@form"/>
 								</h:commandLink>
 							</div>
 						</h:form>
