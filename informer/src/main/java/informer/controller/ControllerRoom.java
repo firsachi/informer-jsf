@@ -35,6 +35,8 @@ public class ControllerRoom implements Serializable{
 	
 	private ModelRoom selectedRoom;
 	
+	private int roomsIndex;
+	
 	@PostConstruct
 	public void init() {
 		this.rooms = serviceRoom.all();
@@ -44,11 +46,7 @@ public class ControllerRoom implements Serializable{
 	public void actionIsSelected(ActionEvent event) {
 		Integer roomId = (Integer) event.getComponent().getAttributes().get("roomId");
 		this.selectedRoom = serviceRoom.findId(roomId);
-	}
-	
-	public String update() {
-		this.selectedRoom = new ModelRoom();
-		return cansel();
+		this.roomsIndex = rooms.indexOf(selectedRoom);
 	}
 	
 	public String addRoom() {
@@ -58,7 +56,14 @@ public class ControllerRoom implements Serializable{
 		return cansel();
 	}
 	
+	public String updateRoom() {
+		serviceRoom.update(selectedRoom);
+		this.rooms.set(roomsIndex, selectedRoom);
+		return cansel();
+	}
+	
 	public String cansel() {
+		this.selectedRoom = new ModelRoom();
 		return "room?faces-redirect=true";
 	}
 
