@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 
 import informer.entity.Room;
@@ -22,7 +23,7 @@ import informer.service.convertor.ConvertorBase;
 @Stateless
 public class ServiceRoom {
 	
-	@EJB
+	@Inject
 	private RepositoryRoom repository;
 	
 	@EJB(beanName = "ConvertorRoom")
@@ -40,6 +41,11 @@ public class ServiceRoom {
 	@Transactional
 	public ModelRoom findId(Integer primaryKey) {
 		return convertor.entityToModel(repository.find(primaryKey));
+	}
+
+	@Transactional
+	public void update(ModelRoom model) {
+		repository.update(convertor.modelToEntity(model));
 	}
 
 

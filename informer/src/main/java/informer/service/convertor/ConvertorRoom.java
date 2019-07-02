@@ -22,8 +22,10 @@ public class ConvertorRoom implements ConvertorBase<Room, ModelRoom>{
 
 	@Override
 	public Room modelToEntity(ModelRoom model) {
-		// TODO Auto-generated method stub
-		return null;
+		Room entity = new Room();
+		entity.setId(model.getRoomId());
+		entity.setNumberRoom(model.getNumberRoom());
+		return entity;
 	}
 
 }
