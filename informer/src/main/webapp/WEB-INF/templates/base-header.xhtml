@@ -8,16 +8,18 @@
 <body>
 	<div class="top-bar">
 		<div class="top-bar-left">
+			<h:form>
 			 <ul class="dropdown menu" data-dropdown-menu="">
 				<li class="menu-text">Site Title</li>
 				<li>
 					<h:commandLink value="#{msg['topbar.directory']}"/>
 					<ul class="submenu menu vertical" data-submenu="">
-  				        <li><h:commandLink value="#{msg['topbar.rooms']}"/>
-  				        </li>
+  				        <li><h:commandLink value="#{msg['topbar.rooms']}" action="#{controllerTopBarPage.roomPage}" /></li>
+  				        <li><h:commandLink value="#{msg['topbar.internalPhones']}" action="#{controllerTopBarPage.phonePage}"/></li>
         			</ul>
 				</li>						
 			</ul>
+			</h:form>
 		</div>
 		<div class="top-bar-right">
 			<!-- 

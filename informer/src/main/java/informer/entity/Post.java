@@ -1,7 +1,7 @@
 package informer.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,7 +39,7 @@ public class Post implements Serializable {
 	private String heft;
 
 	@OneToMany(mappedBy = "post", fetch = FetchType.LAZY)
-	private Set<Employee> employees;
+	private List<Employee> employees;
 
 	@Column(name = "delete")
 	private boolean remove;
@@ -68,11 +68,11 @@ public class Post implements Serializable {
 		this.heft = heft;
 	}
 
-	public Set<Employee> getEmployees() {
+	public List<Employee> getEmployees() {
 		return employees;
 	}
 
-	public void setEmployees(Set<Employee> employees) {
+	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
 

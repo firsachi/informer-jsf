@@ -62,8 +62,7 @@
     					<ui:include src="/WEB-INF/templates/template-room.xhtml"/>
     					
     					<div style="margin-bottom: 0;" class="small align-right button-group">
-							<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}">
-								<f:ajax execute="@form" render="@form"/>
+							<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}" immediate="true">
 							</h:commandLink>
 							<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.addRoom}">
 								<f:ajax execute="@form" render="@form"/>
@@ -81,7 +80,7 @@
 							<ui:include src="/WEB-INF/templates/template-room.xhtml"/>
 							
 							<div style="margin-bottom: 0;" class="small align-right button-group">
-								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}"/>
+								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerRoom.cansel}" immediate="true"/>
 								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerRoom.updateRoom}">
 									<f:ajax execute="@form" render="@form"/>
 								</h:commandLink>
