@@ -1,0 +1,13 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    		<h:outputLabel for="numberPhone" value="#{msg['phone.numbrPhone']}">
+				<h:inputText id="numberPhone" value="#{controllerPhone.selectedPhone.number}">
+					<f:validateLength maximum="3" minimum="3"/>
+				</h:inputText>
+				<h:messages for="numberPhone" style="color:red"/>
+			</h:outputLabel>
+</ui:composition>
