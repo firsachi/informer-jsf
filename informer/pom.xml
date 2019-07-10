@@ -16,7 +16,7 @@
 		<version.javaee-api>8.0</version.javaee-api>
 		<org.hibernate.version>5.4.2.Final</org.hibernate.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.glassfish</groupId>
@@ -24,11 +24,11 @@
 			<version>2.4.0</version>
 		</dependency>
 		<dependency>
-				<groupId>javax</groupId>
-				<artifactId>javaee-api</artifactId>
-				<version>${version.javaee-api}</version>
-				<scope>provided</scope>
-			</dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>${version.javaee-api}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>

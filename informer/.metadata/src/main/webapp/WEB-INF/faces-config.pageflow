@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15616199748230" configfile="/informer/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhml" x="60" y="168" id="pf15616249445493" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15616249445494" path="/index.xhml"/>
+  <nodes xsi:type="pageflow:PFPage" name="room.xhtml" x="204" y="36" id="pf15616249445495" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15625972789270" inlinks="pf15616249445494" path="/private/room.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="private/internal-phone.xhtml" id="pf15625972789271" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15625972789270" path="/private/internal-phone.xhtml"/>
+  <links id="pf15616249445494" target="pf15616249445495" source="pf15616249445493"/>
+  <links id="pf15625972789270" target="pf15625972789271" source="pf15616249445495" outcome="success" redirect="true"/>
+</pageflow:Pageflow>
