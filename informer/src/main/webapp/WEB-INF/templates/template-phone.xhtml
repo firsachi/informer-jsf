@@ -7,6 +7,7 @@
     		<h:outputLabel for="numberPhone" value="#{msg['phone.numbrPhone']}">
 				<h:inputText id="numberPhone" value="#{controllerPhone.selectedPhone.number}">
 					<f:validateLength maximum="3" minimum="3"/>
+					<f:validateBean binding="#{validatorUniquePhone}"/>
 				</h:inputText>
 				<h:messages for="numberPhone" style="color:red"/>
 			</h:outputLabel>
