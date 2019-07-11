@@ -43,7 +43,6 @@ public class ValidatorNumberRoom implements Validator<Integer> {
 			}catch (NoResultException ex)
 			{}			
 				
-
 	}
 
 	private void messageError(String message) {
