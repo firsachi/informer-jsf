@@ -45,7 +45,13 @@
     									<f:passThroughAttribute name="data-open" value="editPhone"/>
     								</h:commandLink>
     								
-    								<h:commandLink styleClass="hollow button alert" value="#{msg['buttons.delete']}"/>
+    								<h:commandLink styleClass="hollow button alert" 
+    												value="#{msg['buttons.delete']}"
+    												actionListener="#{controllerPhone.actionIsSelected}">
+    									<f:attribute name="phoneId" value="#{phone.id}"/>
+    									<f:ajax execute="deletePhone" render="@form :formDelete"/>
+    									<f:passThroughAttribute name="data-open" value="deletePhone"/>
+    								</h:commandLink>
     							</div>
     						</h:column>
     					</h:dataTable>
@@ -82,6 +88,25 @@
 							<div style="margin-bottom: 0;" class="small align-right button-group">
 								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerPhone.cansel}" immediate="true"/>
 								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerPhone.updatePhone}">
+									<f:ajax execute="@form" render="@form"/>
+								</h:commandLink>
+							</div>
+						</h:form>
+				</div>
+				
+				<!-- delete room form -->
+    			<div id="deletePhone" class="reveal" data-reveal="" data-options="closeOnClick:false; closeOnEsc:false;">
+						<h:form id="formDelete">
+							
+							<h4>
+								<h:outputFormat value="#{msg['phone.deletePhone']}">
+									<f:param value="#{controllerPhone.selectedPhone.number}"/>
+								</h:outputFormat>
+							</h4>
+							
+							<div style="margin-bottom: 0;" class="small align-right button-group">
+								<h:commandLink styleClass="button" value="#{msg['buttons.cancel']}" action="#{controllerPhone.cansel}" immediate="true"/>
+								<h:commandLink styleClass="button alert" value="#{msg['buttons.submit']}" action="#{controllerPhone.deletePhone}">
 									<f:ajax execute="@form" render="@form"/>
 								</h:commandLink>
 							</div>
