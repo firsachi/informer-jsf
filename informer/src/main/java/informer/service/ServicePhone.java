@@ -41,4 +41,10 @@ public class ServicePhone {
 	public Phone findPrimaryKey(Integer primaryKey) {
 		return repository.find(primaryKey);
 	}
+
+	@Transactional
+	public void delete(Phone entity) {
+		repository.delete(entity.getId());
+	}
+
 }
