@@ -18,12 +18,16 @@ public abstract class RepositoryBaseImpl<E> implements RepositoryBase<E> {
 	protected EntityManager entityManager;
 
 	private final Class<E> entityClass;
-	
+
 	public RepositoryBaseImpl(Class<E> entityClass) {
 		super();
 		this.entityClass = entityClass;
 	}
 
+	public Class<E> getEntityClass() {
+		return entityClass;
+	}
+	
 	public E create(E entity) {
 		entityManager.persist(entity);
 		return entity;
