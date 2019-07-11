@@ -42,6 +42,12 @@ public class ControllerPhone implements Serializable{
 		this.indexPhones = phones.indexOf(selectedPhone);
 	}
 	
+	public String deletePhone() {
+		servicePhone.delete(selectedPhone);
+		this.phones.remove(selectedPhone);
+		return cansel();
+	}
+	
 	public String updatePhone() {
 		servicePhone.update(selectedPhone);
 		this.phones.set(indexPhones, selectedPhone);
