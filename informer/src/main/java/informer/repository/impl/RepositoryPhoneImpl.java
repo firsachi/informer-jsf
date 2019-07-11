@@ -28,4 +28,11 @@ public class RepositoryPhoneImpl extends RepositoryBaseImpl<Phone> implements Re
 		return query.getResultList();
 	}
 
+	@Override
+	public Phone findNumberPhone(String numberPhone) {
+		TypedQuery<Phone> query = entityManager.createNamedQuery("Phone.findNumerPhone", getEntityClass());
+		query.setParameter("numberPhone", numberPhone);
+		return query.getSingleResult();
+	}
+
 }
