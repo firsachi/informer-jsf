@@ -22,7 +22,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "phone")
 @NamedQueries({
-	@NamedQuery ( name = "Phone.all", query = "SELECT P FROM Phone P ORDER BY P.id")
+	@NamedQuery ( name = "Phone.all", query = "SELECT P FROM Phone P ORDER BY P.id"),
+	@NamedQuery (name = "Phone.findNumerPhone", query = "SELECT p FROM Phone P WHERE P.number = :numberPhone")
 })
 public class Phone implements Serializable {
 
