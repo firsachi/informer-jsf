@@ -23,7 +23,7 @@ public class ServicePhone {
 	private RepositoryPhone repository;
 	
 	@Transactional
-	public List<Phone> all(){
+	public List<Phone> findAll(){
 		return repository.all();
 	}
 	
