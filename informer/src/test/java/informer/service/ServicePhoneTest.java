@@ -48,7 +48,7 @@ public class ServicePhoneTest {
 		
 		when(repositoryPhone.all()).thenReturn(phones);
 		
-		List<Phone> actual = servicePhone.findAll();
+		List<Phone> actual = servicePhone.findAllPhone();
 		verify(repositoryPhone, times(1)).all();
 		assertEquals(phones.size(), actual.size());
 

@@ -32,7 +32,7 @@ public class ControllerPhone implements Serializable{
 	
 	@PostConstruct
 	public void init() {
-		this.phones = servicePhone.findAll();
+		this.phones = servicePhone.findAllPhone();
 		this.selectedPhone = new Phone();
 	}
 	
