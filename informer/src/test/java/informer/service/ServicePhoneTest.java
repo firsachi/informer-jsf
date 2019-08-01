@@ -36,7 +36,6 @@ public class ServicePhoneTest {
 
 	@Test
 	public void testFindAll() {
-		
 		List<Phone> phones = new ArrayList<Phone>();
 	    Phone phone = new Phone();
 	    phone.setId(1);
@@ -52,7 +51,6 @@ public class ServicePhoneTest {
 		List<Phone> actual = servicePhone.findAllPhone();
 		verify(repositoryPhone, times(1)).all();
 		assertEquals(phones.size(), actual.size());
-
 	}
 	
 	@Test
